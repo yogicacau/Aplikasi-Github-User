@@ -1,0 +1,3 @@
+rootProject.name='searchgithub'
+include ':app'
+include ':favoriteuser'

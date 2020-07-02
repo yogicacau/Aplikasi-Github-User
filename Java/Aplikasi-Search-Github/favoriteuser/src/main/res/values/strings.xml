@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Favorite User</string>
+    <string name="content">ini gambar</string>
+    <string name="name">Bagas Makhali</string>
+    <string name="url">ini url github</string>
+    <string name="lihat_detail">Lihat Detail</string>
+</resources>

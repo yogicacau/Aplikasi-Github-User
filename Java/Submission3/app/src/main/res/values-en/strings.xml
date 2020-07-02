@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="url_girhub">https://github.com/makhalibagas</string>
+    <string name="github_user">Github User</string>
+
+
+    <string name="ContentTittleNotif">Github User</string>
+    <string name="ContentTextNotif">Github User</string>
+    <string name="SubTextNotif">Pengin tau pengguna github? ayo masuk aplikasi github user</string>
+</resources>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Github Search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="content">ini gambar</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="pengaturan_bahasa">Pengaturan Bahasa</string>
+    <string name="pengingat_harian">Pengingat Harian</string>
+    <string name="ContentTittleNotif">Ayo buka aplikasi github search</string>
+    <string name="lihat_detail">Lihat Detail</string>
+    <string name="url">ini url github</string>
+    <string name="name">Bagas Makhali</string>
+    <string name="settings">Settings Aplikasi</string>
+    <string name="favorite">Favorite User</string>
+    <string name="delete">successful delete favorite</string>
+    <string name="add">successful add favorite</string>
+    <string name="fav" translatable="false">Favorite User</string>
+</resources>

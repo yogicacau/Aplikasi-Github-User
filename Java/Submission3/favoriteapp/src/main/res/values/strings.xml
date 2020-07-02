@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FavoriteApp</string>
+    <string name="url_girhub">github.com/makhalibagas</string>
+    <string name="name">makhalibagas</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Github Search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="content">this picture</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="pengaturan_bahasa">Settings Language</string>
+    <string name="pengingat_harian">Daily Reminder</string>
+    <string name="ContentTittleNotif">Lets Open aplikasi Github Search</string>
+    <string name="lihat_detail">Show Detail</string>
+    <string name="url">this url github</string>
+    <string name="name">Bagas Makhali</string>
+    <string name="settings">Settings Application</string>
+    <string name="favorite">Favorite User</string>
+    <string name="delete">successful delete favorite</string>
+    <string name="add">successful add favorite</string>
+</resources>

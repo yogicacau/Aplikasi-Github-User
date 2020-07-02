@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name" translatable="false">Submission2</string>
+    <string name="name" translatable="false">Bagas Makhali</string>
+
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="url_girhub">https://github.com/makhalibagas</string>
+    <string name="github_user">Github User</string>
+    <string name="ContentTittleNotif">Github User</string>
+    <string name="ContentTextNotif">Github User</string>
+    <string name="SubTextNotif">Pengin tau pengguna github? ayo masuk aplikasi github user</string>
+</resources>
