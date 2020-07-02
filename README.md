@@ -1,4 +1,4 @@
-# Aplikasi-Github-User
+# :octocat: Aplikasi-Github-User
 
  This repo is all submissions in the Android fundamental application learning class in dicoding and in this class I get a certificate
 
