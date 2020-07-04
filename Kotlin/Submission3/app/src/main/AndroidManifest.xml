@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.makhalibagas.githubuser">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <permission android:name="com.makhalibagas.githubuser.READ_DATABASE"/>
+    <permission android:name="com.makhalibagas.githubuser.WRITE_DATABASE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.activity.SettingsActivity"></activity>
+        <activity android:name=".ui.activity.FavoriteActivity" />
+        <activity android:name=".ui.activity.UserActivity" />
+
+        <provider
+            android:name=".provider.MyContentProvider"
+            android:authorities="com.makhalibagas.githubuser"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.makhalibagas.githubuser.READ_DATABASE"
+            android:writePermission="com.makhalibagas.githubuser.WRITE_DATABASE"/>
+
+        <receiver
+            android:name=".reminder.MyReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.activity.DetailActivity" />
+        <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
