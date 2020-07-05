@@ -17,16 +17,11 @@ class MyContentProvider : ContentProvider() {
     companion object{
         private const val USER = 1
         private const val USER_ID = 2
-        //private const val REPOS = 1
-        //private const val REPOS_ID = 2
         private lateinit var userHelper: UserHelper
-        //private lateinit var reposHelper: ReposHelper
 
         private val uriMatcher = UriMatcher(UriMatcher.NO_MATCH)
 
         init {
-            //uriMatcher.addURI(AUTHOR_REPOS, TABLE_REPOS, REPOS)
-            //uriMatcher.addURI(AUTHOR_REPOS, "$TABLE_REPOS/#", REPOS_ID)
             uriMatcher.addURI(AUTHOR_USER, TABLE_USER, USER)
             uriMatcher.addURI(AUTHOR_USER, "$TABLE_USER/#", USER_ID)
         }
@@ -34,8 +29,6 @@ class MyContentProvider : ContentProvider() {
     override fun onCreate(): Boolean {
         userHelper = UserHelper.getDatabase(context as Context)
         userHelper.open()
-        //reposHelper = ReposHelper.getDatabase(context as Context)
-        //reposHelper.open()
         return true
 
     }
@@ -49,12 +42,6 @@ class MyContentProvider : ContentProvider() {
 
             else -> cursor = null
         }
-
-        /*when(uriMatcher.match(uri)){
-            REPOS -> cursor = reposHelper.queryAll()
-            REPOS_ID -> reposHelper.queryById(uri.lastPathSegment.toString())
-            else -> cursor = null
-        }*/
 
         return cursor
 

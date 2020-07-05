@@ -16,6 +16,7 @@ import com.makhalibagas.githubuser.database.UserContract.UserColumns.Companion.A
 import com.makhalibagas.githubuser.database.UserContract.UserColumns.Companion.CONTENT_URI_USER
 import com.makhalibagas.githubuser.database.UserContract.UserColumns.Companion.HTML
 import com.makhalibagas.githubuser.database.UserContract.UserColumns.Companion.USERNAME
+import com.makhalibagas.githubuser.database.UserHelper
 import com.makhalibagas.githubuser.model.user.User
 import com.makhalibagas.githubuser.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -27,8 +28,6 @@ class DetailActivity : AppCompatActivity() {
         const val EXTRA_USER = "extra_user"
     }
 
-    private var status = false
-    private lateinit var uri : Uri
     private lateinit var detailViewModel: DetailViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,9 +39,9 @@ class DetailActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun initData(){
+    private fun initData() {
         val user = intent.getParcelableExtra<User>(EXTRA_USER)
-        if (user != null){
+        if (user != null) {
 
             detailViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(DetailViewModel::class.java)
             detailViewModel.loadUser(applicationContext, user.login)
@@ -55,27 +54,28 @@ class DetailActivity : AppCompatActivity() {
                 tvName.text = it.name
                 tvUsername.text = it.login
 
-                if (it.bio.isNullOrEmpty()){
+                if (it.bio.isNullOrEmpty()) {
                     tvEmail.visibility = View.GONE
-                }else{
+                } else {
                     tvBio.text = it.bio
                     tvBio.visibility = View.VISIBLE
                 }
-                if (it.email.isNullOrEmpty()){
+                if (it.email.isNullOrEmpty()) {
                     tvEmail.visibility = View.GONE
-                }else{
+                } else {
                     tvEmail.text = it.email
                     tvEmail.visibility = View.VISIBLE
                 }
-                if (it.blog.isNullOrEmpty()){
+                if (it.blog.isNullOrEmpty()) {
                     tvBlog.visibility = View.GONE
-                }else{
+                } else {
                     tvBlog.text = it.blog
                     tvBlog.visibility = View.VISIBLE
                 }
 
                 tvRepo.text = it.publicRepos.toString() + " Repository"
-                tvFollow.text = it.followers.toString() + " Followers . " + it.following.toString() + " Following "
+                tvFollow.text =
+                    it.followers.toString() + " Followers . " + it.following.toString() + " Following "
 
 
                 imgUser.visibility = View.VISIBLE
@@ -85,31 +85,31 @@ class DetailActivity : AppCompatActivity() {
                 linear.visibility = View.VISIBLE
                 pb.visibility = View.INVISIBLE
                 btFavorite.visibility = View.VISIBLE
-                setStatusFav(!status)
-                btFavorite.setOnClickListener {
-                    uri = Uri.parse(CONTENT_URI_USER.toString() + "/" + user.id)
-                    val values = ContentValues()
-                    values.put(USERNAME, user.login)
-                    values.put(AVATAR, user.avatarUrl)
-                    values.put(HTML, user.htmlUrl)
-
-                    if (!status){
-                        contentResolver.insert(CONTENT_URI_USER, values)
-                        setStatusFav(status)
-                    }else{
-                        contentResolver.delete(uri,null,null)
-                    }
-
-                }
             })
-        }
-    }
 
-    @SuppressLint("SetTextI18n")
-    private fun setStatusFav(statusFav:Boolean) = if (statusFav){
-        btFavorite.text = "Favorite"
-    }else{
-        btFavorite.text = "UnFavorite"
+            val userHelper = UserHelper.getDatabase(applicationContext)
+            userHelper.open()
+            if (userHelper.check(user.id.toString())){
+                btFavorite.visibility = View.GONE
+                btUnFavorite.visibility = View.VISIBLE
+            }
+            btFavorite.setOnClickListener {
+                val values = ContentValues()
+                values.put(USERNAME, user.login)
+                values.put(AVATAR, user.avatarUrl)
+                values.put(HTML, user.htmlUrl)
+                contentResolver.insert(CONTENT_URI_USER, values)
+                btFavorite.visibility = View.INVISIBLE
+                btUnFavorite.visibility = View.VISIBLE
+            }
+
+            btUnFavorite.setOnClickListener {
+                contentResolver.delete(Uri.parse(CONTENT_URI_USER.toString() + "/" + user.id),null,null)
+                btFavorite.visibility = View.VISIBLE
+                btUnFavorite.visibility = View.INVISIBLE
+            }
+
+        }
     }
 
     private fun initTabs() {

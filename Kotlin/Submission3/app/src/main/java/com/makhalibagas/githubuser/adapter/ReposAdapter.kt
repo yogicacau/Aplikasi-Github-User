@@ -1,6 +1,7 @@
 package com.makhalibagas.githubuser.adapter
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,14 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.makhalibagas.githubuser.R
+import com.makhalibagas.githubuser.database.ReposContract.ReposColumns.Companion.DESC
+import com.makhalibagas.githubuser.database.ReposContract.ReposColumns.Companion.HTML_URL
+import com.makhalibagas.githubuser.database.ReposContract.ReposColumns.Companion.ID_REPOS
+import com.makhalibagas.githubuser.database.ReposContract.ReposColumns.Companion.LANGUAGE
+import com.makhalibagas.githubuser.database.ReposContract.ReposColumns.Companion.NAME
+import com.makhalibagas.githubuser.database.ReposContract.ReposColumns.Companion.STAR_COUNT
+import com.makhalibagas.githubuser.database.ReposContract.ReposColumns.Companion.TIME_UPDATE
+import com.makhalibagas.githubuser.database.ReposHelper
 import com.makhalibagas.githubuser.model.repository.Repository
 
 /**
@@ -16,6 +25,8 @@ import com.makhalibagas.githubuser.model.repository.Repository
  */
 class ReposAdapter(private val context:Context?, private val reposList : List<Repository>)
     : RecyclerView.Adapter<ReposAdapter.ViewHolder>() {
+
+
 
     class ViewHolder(view : View)  : RecyclerView.ViewHolder(view){
 
@@ -29,13 +40,31 @@ class ReposAdapter(private val context:Context?, private val reposList : List<Re
 
         @SuppressLint("SetTextI18n")
         fun bind(repos : Repository){
+            val reposHelper : ReposHelper = ReposHelper.getDatabase(itemView.context)
+            reposHelper.open()
+
             name.text = repos.name
             desc.text = repos.description
             language.text = repos.language
             star.text = repos.stargazersCount.toString()
             time.text = "Update " + repos.updatedAt
 
+
+            if (reposHelper.check(repos.id.toString())){
+                btStar.visibility = View.GONE
+                btUnStar.visibility = View.VISIBLE
+            }
+
             btStar.setOnClickListener {
+                val values = ContentValues()
+                values.put(ID_REPOS, repos.id)
+                values.put(NAME, repos.name)
+                values.put(DESC, repos.description)
+                values.put(LANGUAGE, repos.language)
+                values.put(STAR_COUNT, repos.stargazersCount.toString())
+                values.put(TIME_UPDATE, repos.updatedAt)
+                values.put(HTML_URL, repos.htmlUrl)
+                reposHelper.insert(values)
                 btUnStar.visibility = View.VISIBLE
                 btStar.visibility = View.GONE
             }
@@ -43,6 +72,7 @@ class ReposAdapter(private val context:Context?, private val reposList : List<Re
             btUnStar.setOnClickListener {
                 btUnStar.visibility = View.GONE
                 btStar.visibility = View.VISIBLE
+                reposHelper.delete(repos.id.toString())
             }
 
         }

@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Github User</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -20,6 +22,4 @@
     <string name="author">Dibuat oleh makhalibagas</string>
     <string name="star_repository">Star Repository</string>
     <string name="favorite_user">Favorite User</string>
-
-
 </resources>
