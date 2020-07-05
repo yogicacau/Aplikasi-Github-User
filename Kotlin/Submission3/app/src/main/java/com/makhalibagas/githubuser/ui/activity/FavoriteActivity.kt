@@ -1,5 +1,6 @@
 package com.makhalibagas.githubuser.ui.activity
 
+import android.content.Intent
 import android.database.ContentObserver
 import android.os.Bundle
 import android.os.Handler
@@ -11,6 +12,8 @@ import com.makhalibagas.githubuser.adapter.UserAdapter
 import com.makhalibagas.githubuser.database.UserContract.UserColumns.Companion.CONTENT_URI_USER
 import com.makhalibagas.githubuser.helper.MappingHelper
 import kotlinx.android.synthetic.main.activity_favorite.*
+import kotlinx.android.synthetic.main.activity_favorite.btSettings
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
@@ -23,7 +26,9 @@ class FavoriteActivity : AppCompatActivity() {
         setContentView(R.layout.activity_favorite)
 
 
-
+        btSettings.setOnClickListener {
+            startActivity(Intent(applicationContext, SettingsActivity::class.java))
+        }
         val handlerThread = HandlerThread("DataObserver")
         handlerThread.start()
         val handler = Handler(handlerThread.looper)

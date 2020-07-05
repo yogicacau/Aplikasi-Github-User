@@ -2,6 +2,7 @@ package com.makhalibagas.githubuser.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,9 +31,10 @@ class UserAdapter(private val context:Context?, private val userList : List<User
                 .into(imgUser)
             tvUser.text = user.login
             tvHtml.text = user.htmlUrl
+            tvHtml.setOnClickListener {
+                itemView.context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(user.htmlUrl)))
+            }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

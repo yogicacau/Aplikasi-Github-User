@@ -33,6 +33,7 @@
         android:textSize="12sp"
         android:text="@string/html"
         android:layout_marginStart="12dp"
+        android:textColor="@android:color/secondary_text_light"
         android:layout_marginTop="6dp"
         app:layout_constraintStart_toEndOf="@id/imgUser"
         app:layout_constraintTop_toBottomOf="@id/tvUser"

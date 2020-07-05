@@ -1,6 +1,7 @@
 package com.makhalibagas.githubuser.ui.activity
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,10 @@ class SettingsActivity : AppCompatActivity() {
 
         tvStarRepository.setOnClickListener {
             startActivity(Intent(applicationContext, StarReposActivity::class.java))
+        }
+
+        tvAuthor.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/makhalibagas")))
         }
     }
 }

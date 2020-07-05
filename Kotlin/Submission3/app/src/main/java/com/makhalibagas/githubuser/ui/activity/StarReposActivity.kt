@@ -1,5 +1,6 @@
 package com.makhalibagas.githubuser.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +31,9 @@ class StarReposActivity : AppCompatActivity() {
         }
 
         rvStar.layoutManager = LinearLayoutManager(applicationContext)
+        btSettings.setOnClickListener {
+            startActivity(Intent(applicationContext, SettingsActivity::class.java))
+        }
     }
 
     private fun loadStarAsync(){
