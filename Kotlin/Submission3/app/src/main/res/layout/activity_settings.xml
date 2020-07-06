@@ -29,7 +29,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="12dp"
                 android:fontFamily="@font/nunito"
-                android:text="Settings"
+                android:text="@string/settings"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
 

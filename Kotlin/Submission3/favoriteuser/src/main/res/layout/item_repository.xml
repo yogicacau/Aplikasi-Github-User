@@ -27,6 +27,7 @@
         android:layout_marginEnd="100dp"
         android:text="@string/descRepo"
         android:textStyle="normal"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNameRepo" />
@@ -45,6 +46,8 @@
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_star"
         android:text="10"
+        android:textColor="@color/colorPrimary"
+        android:drawableTint="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@id/tvLanguage"
         app:layout_constraintTop_toBottomOf="@id/tvDescRepo"
         android:layout_marginTop="10dp"
@@ -57,6 +60,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="Updated 2 days ago"
+        android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -70,6 +74,7 @@
         android:drawableTint="@android:color/secondary_text_light"
         android:includeFontPadding="false"
         android:padding="5dp"
+        android:textColor="@color/colorPrimary"
         android:text="Star"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,6 +91,7 @@
         android:includeFontPadding="false"
         android:padding="5dp"
         android:visibility="gone"
+        android:textColor="@color/colorPrimary"
         android:text="Unstar"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"

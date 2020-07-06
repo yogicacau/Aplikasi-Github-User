@@ -32,7 +32,10 @@ class UserAdapter(private val context:Context?, private val userList : List<User
             tvUser.text = user.login
             tvHtml.text = user.htmlUrl
             tvHtml.setOnClickListener {
-                itemView.context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(user.htmlUrl)))
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(user.htmlUrl))
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                itemView.context.startActivity(intent)
+
             }
         }
     }

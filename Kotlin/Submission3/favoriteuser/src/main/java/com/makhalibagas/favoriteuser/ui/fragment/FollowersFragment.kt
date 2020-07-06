@@ -1,4 +1,4 @@
-package com.makhalibagas.githubuser.ui.fragment
+package com.makhalibagas.favoriteuser.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,12 +9,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.makhalibagas.favoriteuser.R
+import com.makhalibagas.favoriteuser.adapter.UserAdapter
+import com.makhalibagas.favoriteuser.model.user.User
 import com.makhalibagas.favoriteuser.ui.activity.DetailActivity
-import com.makhalibagas.githubuser.R
-import com.makhalibagas.githubuser.adapter.UserAdapter
-import com.makhalibagas.githubuser.model.user.User
-import com.makhalibagas.githubuser.ui.activity.DetailActivity
-import com.makhalibagas.githubuser.viewmodel.FollowViewModel
+import com.makhalibagas.favoriteuser.viewmodel.FollowViewModel
 import kotlinx.android.synthetic.main.fragment_followers.*
 
 /**

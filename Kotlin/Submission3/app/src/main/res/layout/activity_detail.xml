@@ -176,7 +176,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:background="@drawable/background_favorite"
-                android:text="UnFavorite"
+                android:text="@string/unfavorite"
                 android:textAllCaps="false"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"

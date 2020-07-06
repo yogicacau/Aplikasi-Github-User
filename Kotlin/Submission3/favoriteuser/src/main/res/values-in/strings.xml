@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pengguna Github Favorite</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Ketik disini untuk mencari pengguna</string>
+    <string name="name">Bagas Makhali</string>
+    <string name="html">https://github.com/makhalibagas</string>
+    <string name="username">makhalibagas</string>
+    <string name="bio">jangan pernah malah untuk menjadi sukses dan fokuslah pada satu tujuan untuk menjadi lebih baik</string>
+    <string name="email">makhalibagas1@gmail.com</string>
+    <string name="blog">makhalibagas.blogspot.com</string>
+    <string name="favorite">Suka</string>
+    <string name="follows">4 Pengikut. 20 Mengikuti</string>
+    <string name="repos">34 Repository</string>
+    <string name="descRepo">this repo use java and kotlin language, Is all submission in the android fundalmental application learning class in dicoding and in the class i get a certificate</string>
+    <string name="select_language">Select Language</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="author">Dibuat oleh makhalibagas</string>
+    <string name="favorite_user">Favorite User</string>
+    <string name="star_repository">Star Repository</string>
+    <string name="search_user">Search User</string>
+
+
+</resources>

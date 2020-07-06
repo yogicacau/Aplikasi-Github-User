@@ -5,6 +5,7 @@ import android.database.ContentObserver
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.makhalibagas.githubuser.R
@@ -32,7 +33,6 @@ class FavoriteActivity : AppCompatActivity() {
         val handlerThread = HandlerThread("DataObserver")
         handlerThread.start()
         val handler = Handler(handlerThread.looper)
-
         val myObserver = object : ContentObserver(handler){
             override fun onChange(selfChange: Boolean) {
                 loadUserAsync()
@@ -43,8 +43,6 @@ class FavoriteActivity : AppCompatActivity() {
 
         if (savedInstanceState == null){
             loadUserAsync()
-        }else{
-
         }
 
         rvFav.layoutManager = LinearLayoutManager(this)
@@ -61,7 +59,7 @@ class FavoriteActivity : AppCompatActivity() {
             if (user.isNotEmpty()){
                 rvFav.adapter = UserAdapter(applicationContext, user)
             }else{
-
+                notFound.visibility = View.VISIBLE
             }
         }
     }

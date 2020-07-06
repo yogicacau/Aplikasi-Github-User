@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github User Fav</string>
+    <string name="app_name">Github User Favorite</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -20,4 +20,7 @@
     <string name="author">Dibuat oleh makhalibagas</string>
     <string name="star_repository">Star Repository</string>
     <string name="favorite_user">Favorite User</string>
+    <string name="search_user">Search User</string>
+
+
 </resources>

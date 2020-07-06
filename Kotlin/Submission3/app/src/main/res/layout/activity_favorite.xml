@@ -29,7 +29,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="12dp"
                 android:fontFamily="@font/nunito"
-                android:text="Favorite User"
+                android:text="@string/favorite_user"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
@@ -50,6 +50,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/item_user" />
+    <LinearLayout
+        android:id="@+id/notFound"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:tint="@color/colorPrimary"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_github_black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/not_found"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+
+    </LinearLayout>
 
 
 </LinearLayout>
