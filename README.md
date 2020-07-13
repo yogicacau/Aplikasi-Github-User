@@ -18,7 +18,10 @@
   4. Content provider
   
 # Preview application
- With Kotlin
+ #### With Kotlin
+ 
+ 
+ 
 ![Screenshot_20200713-214352](https://user-images.githubusercontent.com/53173709/87319494-e7cab380-c553-11ea-9a84-62f4088bf56c.png)
 ![Screenshot_20200713-214406](https://user-images.githubusercontent.com/53173709/87319504-ea2d0d80-c553-11ea-846d-ed33c6379ccf.png)
 ![Screenshot_20200713-214414](https://user-images.githubusercontent.com/53173709/87319506-eac5a400-c553-11ea-892f-d7e713524a95.png)
@@ -32,7 +35,9 @@
 ![Screenshot_20200713-215451](https://user-images.githubusercontent.com/53173709/87319531-f1541b80-c553-11ea-88c0-696e8e92001f.png)
  
  # Preview application
- With Java
+ #### With Java
+ 
+ 
 ![Screenshot_20200513-090420](https://user-images.githubusercontent.com/53173709/81827581-17187080-9563-11ea-9b2e-a2fbec938bbe.png)
 ![Screenshot_20200513-090518](https://user-images.githubusercontent.com/53173709/81827630-25ff2300-9563-11ea-80f4-cf54a19b802f.png)
 ![Screenshot_20200513-090525](https://user-images.githubusercontent.com/53173709/81827708-3d3e1080-9563-11ea-9df9-acb1a23ccd08.png)
