@@ -70,7 +70,8 @@ Stack Widget untuk menampilkan daftar user favorite (opsional).
 
 # Sertifikat Kelulusan Saya 
 
-![Screenshot_188](https://user-images.githubusercontent.com/53173709/81830386-306eec00-9566-11ea-8d28-e703b322ab29.png)
+![Screenshot_9](https://user-images.githubusercontent.com/53173709/93494283-0de74800-f937-11ea-8a5b-ff13cfe2fb9c.png)
+
 
  
 
